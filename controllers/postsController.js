@@ -23,6 +23,8 @@ module.exports = {
 
         });
 
+
+        
         const data = {count: post.length,
                       posts: post}
         res.json(data)
