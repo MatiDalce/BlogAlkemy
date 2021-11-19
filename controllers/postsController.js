@@ -22,7 +22,10 @@ module.exports = {
             })
 
         });
-        res.json(post)
+
+        const data = {count: post.length,
+                      posts: post}
+        res.json(data)
     },
 
     getPost: async (req, res) => {
