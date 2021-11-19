@@ -1,3 +1,6 @@
+const db = require("../database/models")
+
+
 module.exports = { 
 
 getAll : (req,res) => { res.send("hola") }, 
