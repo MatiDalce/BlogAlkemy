@@ -28,15 +28,35 @@ module.exports = {
         res.json(data)
     },
 
-    getPost: async (req, res) => {
+    getOnePost: async (req, res) => {
+        
 
-        const post = await db.Post.findByPk(req.params.id)
+        const onePost = await db.Post.findByPk(req.params.id)
 
-        res.json(post)
+        if(!onePost) { res.send("No hay posteos")}
+
+        console.log(onePost)
+
+        res.json(onePost)
 
     },
 
-    postPost:  (req, res) => {
+    postPost:  async(req, res) => {
+
+        await db.Post.Create(  
+          {  
+            name: req.body.name,
+            title: req.body.title,
+            image: req.body.image,
+            category: req.body.category,
+            content: req.body.content,
+
+          }
+
+
+        )
+
+        
 
           
 
