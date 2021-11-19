@@ -36,9 +36,21 @@ module.exports = {
 
     },
 
-    postPost: (req, res) => { },
+    postPost:  (req, res) => {
+
+          
+
+
+
+     },
     editPost: (req, res) => { },
-    delete: (req, res) => {
+    delete:async (req, res) => {
+
+        await db.Post.destroy({
+            where:{
+                id:req.params.id
+            }
+           })
 
 
 
